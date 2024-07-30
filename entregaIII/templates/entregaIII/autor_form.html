@@ -1,0 +1,16 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Nuevo Autor{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Nuevo Autor</h1>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+{% endblock %}

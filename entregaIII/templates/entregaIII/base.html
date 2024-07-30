@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tercera Entrega{% endblock %}</title>
+    {% load static %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        /* Estilos personalizados para la barra de navegación */
+        .navbar-custom {
+            background-color: #343a40; /* Fondo oscuro */
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* Color del texto */
+        }
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #cfcfcf; /* Color del texto al pasar el mouse */
+        }
+        .navbar-custom .navbar-brand {
+            color: #ffffff; /* Color del texto del logo */
+        }
+        .navbar-custom .navbar-brand:hover {
+            color: #cfcfcf; /* Color del texto del logo al pasar el mouse */
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='white' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/></svg>");
+        }
+        .container-custom {
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'autor_list' %}">Autores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'autor_create' %}">Nuevo Autor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'autor_search' %}">Buscar Autor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'editorial_list' %}">Editoriales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'editorial_create' %}">Nueva Editorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'editorial_search' %}">Buscar Editorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'libro_list' %}">Libros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'libro_create' %}">Nuevo Libro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'libro_search' %}">Buscar Libro</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-custom mt-4">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

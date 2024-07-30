@@ -1,0 +1,22 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Buscar Autor{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Buscar Autor</h1>
+    <form method="get" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+    <ul class="list-group mt-4">
+        {% if autores %}
+            {% for autor in autores %}
+            <li class="list-group-item">{{ autor.nombre }} {{ autor.apellido }}</li>
+            {% endfor %}
+        {% else %}
+            <li class="list-group-item">No se encontraron autores.</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Buscar Libro{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Buscar Libro</h1>
+    <form method="get" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+
+    {% if libros %}
+        <ul class="list-group mt-4">
+            {% for libro in libros %}
+                <li class="list-group-item">{{ libro.titulo }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron libros.</p>
+    {% endif %}
+    </div>
+{% endblock %}

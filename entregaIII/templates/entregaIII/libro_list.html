@@ -1,0 +1,14 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Lista de Libros</h1>
+    <ul class="list-group">
+        {% for libro in libros %}
+        <li class="list-group-item">{{ libro.titulo }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

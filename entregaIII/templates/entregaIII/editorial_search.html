@@ -1,0 +1,23 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Buscar Editorial{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Buscar Editorial</h1>
+    <form method="GET" action="{% url 'editorial_search' %}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" name="q" placeholder="Buscar editoriales..." aria-label="Buscar">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+    
+    <ul class="list-group mt-4">
+        {% if editoriales %}
+            {% for editorial in editoriales %}
+            <li class="list-group-item">{{ editorial.nombre }}</li>
+            {% endfor %}
+        {% else %}
+            <li class="list-group-item">No se encontraron editoriales.</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

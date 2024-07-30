@@ -1,0 +1,14 @@
+{% extends 'entregaIII/base.html' %}
+
+{% block title %}Lista de Autores{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Lista de Autores</h1>
+    <ul class="list-group">
+        {% for autor in autores %}
+        <li class="list-group-item">{{ autor.nombre }} {{ autor.apellido }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
